@@ -11,9 +11,6 @@ def make_dataset():
     df = build_features.build_features(raw_data)
     df.to_csv("C:/Users/groes/OneDrive/Documents/701CW_2/Intro_to_AI/data/processed/4.0-processed_data_w_listprice.csv")
 
-#Test:
-#make_dataset()
-#new_df = pd.read_csv("C:/Users/groes/OneDrive/Documents/701CW_2/Intro_to_AI/data/processed/3.0-processed_data.csv")
 
 ###### SPLITTING DATASET INTO TRAINING AND VALIDATION #######
 # Create an array that for each home makes a boolean. The number of trues are percentage_trainingset %
@@ -69,35 +66,3 @@ def partition_dataset(df, target_name, training_size):
     return x_train, x_test, y_train, y_test
     
 
-"""
-# -*- coding: utf-8 -*-
-import click
-import logging
-from pathlib import Path
-from dotenv import find_dotenv, load_dotenv
-
-
-@click.command()
-@click.argument('input_filepath', type=click.Path(exists=True))
-@click.argument('output_filepath', type=click.Path())
-def main(input_filepath, output_filepath):
-    """ """Runs data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in ../processed)."""
-"""
-    logger = logging.getLogger(__name__)
-    logger.info('making final data set from raw data')
-
-
-if __name__ == '__main__':
-    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
-
-    # not used in this stub but often useful for finding various files
-    project_dir = Path(__file__).resolve().parents[2]
-
-    # find .env automagically by walking up directories until it's found, then
-    # load up the .env entries as environment variables
-    load_dotenv(find_dotenv())
-
-    main()
-"""
